@@ -22,7 +22,11 @@ npm install
 ```bash
 npm run dev
 ```
-### Template Komponenya Diambil Dari sini
+### Preview komponen
+```link
+https://adminlte.io/themes/v3/
+```
+### Template komponenya diambil dari sini
 ```bash
-git clone 
+git clone https://github.com/ColorlibHQ/AdminLTE.git
 ```
