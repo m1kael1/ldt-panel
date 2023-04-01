@@ -26,7 +26,7 @@ npm run dev
 ```link
 https://adminlte.io/themes/v3/
 ```
-### Template komponenya diambil dari sini
+### Template komponenya diambil dari sini (kalau ada)
 ```bash
 git clone https://github.com/ColorlibHQ/AdminLTE.git
 ```
