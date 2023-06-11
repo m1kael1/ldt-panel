@@ -6,22 +6,20 @@ const Sidebar = () => {
 	const [clickPage, setClickPage] = useState(true);
 
 	const handleClick = () => {
-		setClick((click) => !click);
-	};
-	const handleClickPage = () => {
-		setClickPage((clickPage) => !clickPage);
+		setClick(!click);
 	};
 
-	let active = click ? "" : "active";
-	let activePage = clickPage ? "" : "active";
+	const handleClickPage = () => {
+		setClickPage(!clickPage);
+	};
 
 	return (
-		<div className="h-[100vh] w-[250px] fixed top-0 left-0">
-			<aside className="main-sidebar sidebar-dark-primary elevation-4  ">
+		<div className="">
+			<aside className="main-sidebar sidebar-dark-primary elevation-4">
 				{/* Brand Logo */}
-				<a href="index3.html" className="brand-link ">
-					<span className="brand-text font-weight-light ">LDT Panel</span>
-				</a>
+				<NavLink to="/" className="brand-link">
+					<span className="brand-text font-weight-light">LDT Panel</span>
+				</NavLink>
 				{/* Sidebar */}
 				<div className="sidebar">
 					{/* Sidebar user panel (optional) */}
@@ -34,9 +32,9 @@ const Sidebar = () => {
 							/>
 						</div>
 						<div className="info">
-							<a href="#" className="d-block">
+							<NavLink to="#" className="d-block">
 								Administrator
-							</a>
+							</NavLink>
 						</div>
 					</div>
 
@@ -44,13 +42,12 @@ const Sidebar = () => {
 					<nav className="mt-2">
 						<ul
 							className="nav nav-pills nav-sidebar flex-column"
-							data-widget="treeview"
 							role="menu"
 							data-accordion="false"
 						>
 							{/* Add icons to the links using the .nav-icon class
-         with font-awesome or any other icon font library */}
-							<li className="nav-item ">
+                  with font-awesome or any other icon font library */}
+							<li className="nav-item">
 								<NavLink to="/" activeClassName="active" className="nav-link">
 									<i className="far fa-circle nav-icon" />
 									<p>Web Profile</p>
@@ -58,17 +55,26 @@ const Sidebar = () => {
 							</li>
 
 							<li className="nav-item">
-								<a
-									className={`nav-link ${activePage}`}
+								<NavLink
+									className={`nav-link ${clickPage ? "" : "active"}`}
 									onClick={handleClickPage}
+									to="#"
 								>
 									<i className="nav-icon fas fa-book" />
 									<p>
 										Pages
-										<i className="fas fa-angle-left right" />
+										<i
+											className={`fas  right fa-angle-left ${
+												clickPage ? "" : "-rotate-90"
+											}`}
+										/>
 									</p>
-								</a>
-								<ul className="nav nav-treeview">
+								</NavLink>
+								<ul
+									className={`nav nav-treeview ${
+										clickPage ? "d-none" : "d-block"
+									}`}
+								>
 									<li className="nav-item">
 										<NavLink
 											to="/dashboard"
