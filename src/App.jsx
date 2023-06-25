@@ -12,18 +12,20 @@ import WebProfile from "./pages/WebProfile";
 
 const App = () => {
 	return (
-		<BrowserRouter>
-			<Navbar />
-			<Sidebar></Sidebar>
-			<Routes>
-				<Route path="/" element={<WebProfile />} />
-				<Route path="/dashboard" element={<Dashboard />} />
-				<Route path="/product" element={<Product />} />
-				<Route path="/add" element={<Add />} />
-				<Route path="/edit" element={<Edit />} />
-			</Routes>
-			<Footer />
-		</BrowserRouter>
+		<div class="wrapper">
+			<BrowserRouter>
+				<Navbar />
+				<Sidebar></Sidebar>
+				<Routes>
+					<Route path="/" element={<WebProfile />} />
+					<Route path="/dashboard" element={<Dashboard />} />
+					<Route path="/list-produk" element={<Product />} />
+					<Route path="/tambah-produk" element={<Add />} />
+					<Route path="/edit-produk" element={<Edit />} />
+				</Routes>
+				<Footer />
+			</BrowserRouter>
+		</div>
 	);
 };
 

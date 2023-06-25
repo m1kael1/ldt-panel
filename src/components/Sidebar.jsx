@@ -2,23 +2,24 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-	const [click, setClick] = useState(true);
-	const [clickPage, setClickPage] = useState(true);
+	const [pages, setPages] = useState(false);
+	function clickPages() {
+		setPages(!pages);
+	}
 
-	const handleClick = () => {
-		setClick(!click);
-	};
-
-	const handleClickPage = () => {
-		setClickPage(!clickPage);
-	};
-
+	console.log(pages);
 	return (
-		<div className="">
-			<aside className="main-sidebar sidebar-dark-primary elevation-4">
+		<>
+			<aside className="main-sidebar sidebar-dark-primary elevation-4 ">
 				{/* Brand Logo */}
-				<NavLink to="/" className="brand-link">
-					<span className="brand-text font-weight-light">LDT Panel</span>
+				<NavLink to="/" className="brand-link ">
+					<img
+						src="dist/img/AdminLTELogo.png"
+						alt="AdminLTE Logo"
+						className="brand-image img-circle elevation-3"
+						style={{ opacity: ".8" }}
+					/>
+					<span className="brand-text font-weight-light">AdminLTE 3</span>
 				</NavLink>
 				{/* Sidebar */}
 				<div className="sidebar">
@@ -27,12 +28,12 @@ const Sidebar = () => {
 						<div className="image">
 							<img
 								src="dist/img/user2-160x160.jpg"
-								className="img-circle elevation-2"
+								className="min-w-[33.6px]	 img-circle elevation-2"
 								alt="User Image"
 							/>
 						</div>
 						<div className="info">
-							<NavLink to="#" className="d-block">
+							<NavLink to="/" className="d-block">
 								Administrator
 							</NavLink>
 						</div>
@@ -42,77 +43,53 @@ const Sidebar = () => {
 					<nav className="mt-2">
 						<ul
 							className="nav nav-pills nav-sidebar flex-column"
+							data-widget="treeview"
 							role="menu"
 							data-accordion="false"
 						>
-							{/* Add icons to the links using the .nav-icon class
-                  with font-awesome or any other icon font library */}
+							{/* dashboard */}
 							<li className="nav-item">
-								<NavLink to="/" activeClassName="active" className="nav-link">
+								<NavLink to="/" className="nav-link">
 									<i className="far fa-circle nav-icon" />
 									<p>Web Profile</p>
 								</NavLink>
 							</li>
 
 							<li className="nav-item">
-								<NavLink
-									className={`nav-link ${clickPage ? "" : "active"}`}
-									onClick={handleClickPage}
+								<a
+									onClick={clickPages}
 									to="#"
+									className={`nav-link ${pages ? "active" : ""}`}
 								>
 									<i className="nav-icon fas fa-book" />
 									<p>
 										Pages
-										<i
-											className={`fas  right fa-angle-left ${
-												clickPage ? "" : "-rotate-90"
-											}`}
-										/>
+										<i className="fas fa-angle-left right" />
 									</p>
-								</NavLink>
-								<ul
-									className={`nav nav-treeview ${
-										clickPage ? "d-none" : "d-block"
-									}`}
-								>
+								</a>
+								<ul className="nav nav-treeview">
 									<li className="nav-item">
-										<NavLink
-											to="/dashboard"
-											activeClassName="active"
-											className="nav-link"
-										>
+										<NavLink to="/dashboard" className="nav-link">
 											<i className="far fa-circle nav-icon" />
 											<p>Dashboard</p>
 										</NavLink>
 									</li>
 									<li className="nav-item">
-										<NavLink
-											to="/product"
-											activeClassName="active"
-											className="nav-link"
-										>
+										<NavLink to="/list-produk" className="nav-link">
 											<i className="far fa-circle nav-icon" />
-											<p>Products</p>
+											<p>List Produk</p>
 										</NavLink>
 									</li>
 									<li className="nav-item">
-										<NavLink
-											to="/add"
-											activeClassName="active"
-											className="nav-link"
-										>
+										<NavLink to="tambah-produk" className="nav-link">
 											<i className="far fa-circle nav-icon" />
-											<p>Add Product</p>
+											<p>Tambah Produk</p>
 										</NavLink>
 									</li>
 									<li className="nav-item">
-										<NavLink
-											to="/edit"
-											activeClassName="active"
-											className="nav-link"
-										>
+										<NavLink to="edit-produk" className="nav-link">
 											<i className="far fa-circle nav-icon" />
-											<p>Edit Product</p>
+											<p>Edit Produk</p>
 										</NavLink>
 									</li>
 								</ul>
@@ -123,7 +100,7 @@ const Sidebar = () => {
 				</div>
 				{/* /.sidebar */}
 			</aside>
-		</div>
+		</>
 	);
 };
 
