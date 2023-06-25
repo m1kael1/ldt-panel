@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<div>
-			<footer className="main-footer ">
+		<>
+			<footer className="main-footer">
 				<strong>
 					Copyright © 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.
 				</strong>
@@ -12,7 +12,7 @@ const Footer = () => {
 					<b>Version</b> 3.2.0
 				</div>
 			</footer>
-		</div>
+		</>
 	);
 };
 

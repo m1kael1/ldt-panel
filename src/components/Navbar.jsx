@@ -8,23 +8,18 @@ const Navbar = () => {
 				{/* Left navbar links */}
 				<ul className="navbar-nav">
 					<li className="nav-item">
-						<NavLink
+						<a
 							className="nav-link"
-							to="#"
-							role="button"
 							data-widget="pushmenu"
+							href="#"
+							role="button"
 						>
 							<i className="fas fa-bars" />
-						</NavLink>
+						</a>
 					</li>
 					<li className="nav-item d-none d-sm-inline-block">
 						<NavLink to="/" className="nav-link">
 							Home
-						</NavLink>
-					</li>
-					<li className="nav-item d-none d-sm-inline-block">
-						<NavLink to="#" className="nav-link">
-							Contact
 						</NavLink>
 					</li>
 				</ul>
