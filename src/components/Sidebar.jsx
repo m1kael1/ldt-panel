@@ -7,7 +7,6 @@ const Sidebar = () => {
 		setPages(!pages);
 	}
 
-	console.log(pages);
 	return (
 		<>
 			<aside className="main-sidebar sidebar-dark-primary elevation-4 ">
@@ -55,7 +54,11 @@ const Sidebar = () => {
 								</NavLink>
 							</li>
 
-							<li className="nav-item">
+							<li
+								className={`nav-item ${
+									pages ? "menu-is-opening menu-open" : ""
+								}`}
+							>
 								<a
 									onClick={clickPages}
 									to="#"
