@@ -1,336 +1,192 @@
 import React from "react";
+import Calendar from '../components/Calendar';
+
 
 const Dashboard = () => {
-	return (
-		<>
-			<div className="content-wrapper">
-				<div className="content-header">
-					<div className="container-fluid">
-						<div className="row mb-2">
-							<div className="col-sm-6">
-								<h1 className="m-0">Dashboard</h1>
-							</div>
-						</div>
-					</div>
-				</div>
+  return (
+    <>
+      <div className="content-wrapper">
+        <section className="content">
+          <div className="container-fluid">
+            {/* Small boxes (Stat box) */}
+            <div className="row">
+              <div className="col-lg-3 col-6">
+                {/* small box */}
+                <div className="small-box bg-info">
+                  <div className="inner">
+                    <h3>150</h3>
+                    <p>New Orders</p>
+                  </div>
+                  <div className="icon">
+                    <i className="ion ion-bag" />
+                  </div>
+                  <a href="#" className="small-box-footer">
+                    More info <i className="fas fa-arrow-circle-right" />
+                  </a>
+                </div>
+              </div>
+              {/* ./col */}
+              <div className="col-lg-3 col-6">
+                {/* small box */}
+                <div className="small-box bg-warning">
+                  <div className="inner">
+                    <h3>44</h3>
+                    <p>User Registrations</p>
+                  </div>
+                  <div className="icon">
+                    <i className="ion ion-person-add" />
+                  </div>
+                  <a href="#" className="small-box-footer">
+                    More info <i className="fas fa-arrow-circle-right" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/* /.row */}
+            {/* Main row */}
+            <div className="row">
+              {/* Left col */}
+              <div className="card">
+                <div className="card-header border-0">
+                  <h3 className="card-title">Products</h3>
+                  <div className="card-tools">
+                    <a href="#" className="btn btn-tool btn-sm">
+                      <i className="fas fa-download" />
+                    </a>
+                    <a href="#" className="btn btn-tool btn-sm">
+                      <i className="fas fa-bars" />
+                    </a>
+                  </div>
+                </div>
+                <div className="card-body table-responsive p-0">
+                  <table className="table table-striped table-valign-middle">
+                    <thead>
+                      <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Sales</th>
+                        <th>More</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <img
+                            src="dist/img/default-150x150.png"
+                            alt="Product 1"
+                            className="img-circle img-size-32 mr-2"
+                          />
+                          Some Product
+                        </td>
+                        <td>$13 USD</td>
+                        <td>
+                          <small className="text-success mr-1">
+                            <i className="fas fa-arrow-up" />
+                            12%
+                          </small>
+                          12,000 Sold
+                        </td>
+                        <td>
+                          <a href="#" className="text-muted">
+                            <i className="fas fa-search" />
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img
+                            src="dist/img/default-150x150.png"
+                            alt="Product 1"
+                            className="img-circle img-size-32 mr-2"
+                          />
+                          Another Product
+                        </td>
+                        <td>$29 USD</td>
+                        <td>
+                          <small className="text-warning mr-1">
+                            <i className="fas fa-arrow-down" />
+                            0.5%
+                          </small>
+                          123,234 Sold
+                        </td>
+                        <td>
+                          <a href="#" className="text-muted">
+                            <i className="fas fa-search" />
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img
+                            src="dist/img/default-150x150.png"
+                            alt="Product 1"
+                            className="img-circle img-size-32 mr-2"
+                          />
+                          Amazing Product
+                        </td>
+                        <td>$1,230 USD</td>
+                        <td>
+                          <small className="text-danger mr-1">
+                            <i className="fas fa-arrow-down" />
+                            3%
+                          </small>
+                          198 Sold
+                        </td>
+                        <td>
+                          <a href="#" className="text-muted">
+                            <i className="fas fa-search" />
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <img
+                            src="dist/img/default-150x150.png"
+                            alt="Product 1"
+                            className="img-circle img-size-32 mr-2"
+                          />
+                          Perfect Item
+                          <span className="badge bg-danger">NEW</span>
+                        </td>
+                        <td>$199 USD</td>
+                        <td>
+                          <small className="text-success mr-1">
+                            <i className="fas fa-arrow-up" />
+                            63%
+                          </small>
+                          87 Sold
+                        </td>
+                        <td>
+                          <a href="#" className="text-muted">
+                            <i className="fas fa-search" />
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
 
-				<section className="content">
-					<div className="container-fluid">
-						{/* Small boxes (Stat box) */}
-						<div className="row">
-							<div className="col-lg-3 col-6">
-								{/* small box */}
-								<div className="small-box bg-info">
-									<div className="inner">
-										<h3>150</h3>
-										<p>New Orders</p>
-									</div>
-									<div className="icon">
-										<i className="ion ion-bag" />
-									</div>
-									<a href="#" className="small-box-footer">
-										More info <i className="fas fa-arrow-circle-right" />
-									</a>
-								</div>
-							</div>
-							{/* ./col */}
-							<div className="col-lg-3 col-6">
-								{/* small box */}
-								<div className="small-box bg-warning">
-									<div className="inner">
-										<h3>44</h3>
-										<p>User Registrations</p>
-									</div>
-									<div className="icon">
-										<i className="ion ion-person-add" />
-									</div>
-									<a href="#" className="small-box-footer">
-										More info <i className="fas fa-arrow-circle-right" />
-									</a>
-								</div>
-							</div>
-						</div>
-						{/* /.row */}
-						{/* Main row */}
-						<div className="row">
-							{/* Left col */}
-							<section className="col-lg-7 connectedSortable">
-								{/* TO DO List */}
-								<div className="card">
-									<div className="card-header">
-										<h3 className="card-title">
-											<i className="ion ion-clipboard mr-1" />
-											To Do List
-										</h3>
-										<div className="card-tools">
-											<ul className="pagination pagination-sm">
-												<li className="page-item">
-													<a href="#" className="page-link">
-														«
-													</a>
-												</li>
-												<li className="page-item">
-													<a href="#" className="page-link">
-														1
-													</a>
-												</li>
-												<li className="page-item">
-													<a href="#" className="page-link">
-														2
-													</a>
-												</li>
-												<li className="page-item">
-													<a href="#" className="page-link">
-														3
-													</a>
-												</li>
-												<li className="page-item">
-													<a href="#" className="page-link">
-														»
-													</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									{/* /.card-header */}
-									<div className="card-body">
-										<ul className="todo-list" data-widget="todo-list">
-											<li>
-												{/* drag handle */}
-												<span className="handle">
-													<i className="fas fa-ellipsis-v" />
-													<i className="fas fa-ellipsis-v" />
-												</span>
-												{/* checkbox */}
-												<div className="icheck-primary d-inline ml-2">
-													<input
-														type="checkbox"
-														defaultValue
-														name="todo1"
-														id="todoCheck1"
-													/>
-													<label htmlFor="todoCheck1" />
-												</div>
-												{/* todo text */}
-												<span className="text">Design a nice theme</span>
-												{/* Emphasis label */}
-												<small className="badge badge-danger">
-													<i className="far fa-clock" /> 2 mins
-												</small>
-												{/* General tools such as edit or delete*/}
-												<div className="tools">
-													<i className="fas fa-edit" />
-													<i className="fas fa-trash-o" />
-												</div>
-											</li>
-											<li>
-												<span className="handle">
-													<i className="fas fa-ellipsis-v" />
-													<i className="fas fa-ellipsis-v" />
-												</span>
-												<div className="icheck-primary d-inline ml-2">
-													<input
-														type="checkbox"
-														defaultValue
-														name="todo2"
-														id="todoCheck2"
-														defaultChecked
-													/>
-													<label htmlFor="todoCheck2" />
-												</div>
-												<span className="text">Make the theme responsive</span>
-												<small className="badge badge-info">
-													<i className="far fa-clock" /> 4 hours
-												</small>
-												<div className="tools">
-													<i className="fas fa-edit" />
-													<i className="fas fa-trash-o" />
-												</div>
-											</li>
-											<li>
-												<span className="handle">
-													<i className="fas fa-ellipsis-v" />
-													<i className="fas fa-ellipsis-v" />
-												</span>
-												<div className="icheck-primary d-inline ml-2">
-													<input
-														type="checkbox"
-														defaultValue
-														name="todo3"
-														id="todoCheck3"
-													/>
-													<label htmlFor="todoCheck3" />
-												</div>
-												<span className="text">
-													Let theme shine like a star
-												</span>
-												<small className="badge badge-warning">
-													<i className="far fa-clock" /> 1 day
-												</small>
-												<div className="tools">
-													<i className="fas fa-edit" />
-													<i className="fas fa-trash-o" />
-												</div>
-											</li>
-											<li>
-												<span className="handle">
-													<i className="fas fa-ellipsis-v" />
-													<i className="fas fa-ellipsis-v" />
-												</span>
-												<div className="icheck-primary d-inline ml-2">
-													<input
-														type="checkbox"
-														defaultValue
-														name="todo4"
-														id="todoCheck4"
-													/>
-													<label htmlFor="todoCheck4" />
-												</div>
-												<span className="text">
-													Let theme shine like a star
-												</span>
-												<small className="badge badge-success">
-													<i className="far fa-clock" /> 3 days
-												</small>
-												<div className="tools">
-													<i className="fas fa-edit" />
-													<i className="fas fa-trash-o" />
-												</div>
-											</li>
-											<li>
-												<span className="handle">
-													<i className="fas fa-ellipsis-v" />
-													<i className="fas fa-ellipsis-v" />
-												</span>
-												<div className="icheck-primary d-inline ml-2">
-													<input
-														type="checkbox"
-														defaultValue
-														name="todo5"
-														id="todoCheck5"
-													/>
-													<label htmlFor="todoCheck5" />
-												</div>
-												<span className="text">
-													Check your messages and notifications
-												</span>
-												<small className="badge badge-primary">
-													<i className="far fa-clock" /> 1 week
-												</small>
-												<div className="tools">
-													<i className="fas fa-edit" />
-													<i className="fas fa-trash-o" />
-												</div>
-											</li>
-											<li>
-												<span className="handle">
-													<i className="fas fa-ellipsis-v" />
-													<i className="fas fa-ellipsis-v" />
-												</span>
-												<div className="icheck-primary d-inline ml-2">
-													<input
-														type="checkbox"
-														defaultValue
-														name="todo6"
-														id="todoCheck6"
-													/>
-													<label htmlFor="todoCheck6" />
-												</div>
-												<span className="text">
-													Let theme shine like a star
-												</span>
-												<small className="badge badge-secondary">
-													<i className="far fa-clock" /> 1 month
-												</small>
-												<div className="tools">
-													<i className="fas fa-edit" />
-													<i className="fas fa-trash-o" />
-												</div>
-											</li>
-										</ul>
-									</div>
-									{/* /.card-body */}
-									<div className="card-footer clearfix">
-										<button
-											type="button"
-											className="btn btn-primary float-right"
-										>
-											<i className="fas fa-plus" /> Add item
-										</button>
-									</div>
-								</div>
-								{/* /.card */}
-							</section>
-							{/* /.Left col */}
-							{/* right col (We are only adding the ID to make the widgets sortable)*/}
-							<section className="col-lg-5 connectedSortable">
-								{/* Calendar */}
-								<div className="card bg-gradient-success">
-									<div className="card-header border-0">
-										<h3 className="card-title">
-											<i className="far fa-calendar-alt" />
-											Calendar
-										</h3>
-										{/* tools card */}
-										<div className="card-tools">
-											{/* button with a dropdown */}
-											<div className="btn-group">
-												<button
-													type="button"
-													className="btn btn-success btn-sm dropdown-toggle"
-													data-toggle="dropdown"
-													data-offset={-52}
-												>
-													<i className="fas fa-bars" />
-												</button>
-												<div className="dropdown-menu" role="menu">
-													<a href="#" className="dropdown-item">
-														Add new event
-													</a>
-													<a href="#" className="dropdown-item">
-														Clear events
-													</a>
-													<div className="dropdown-divider" />
-													<a href="#" className="dropdown-item">
-														View calendar
-													</a>
-												</div>
-											</div>
-											<button
-												type="button"
-												className="btn btn-success btn-sm"
-												data-card-widget="collapse"
-											>
-												<i className="fas fa-minus" />
-											</button>
-											<button
-												type="button"
-												className="btn btn-success btn-sm"
-												data-card-widget="remove"
-											>
-												<i className="fas fa-times" />
-											</button>
-										</div>
-										{/* /. tools */}
-									</div>
-									{/* /.card-header */}
-									<div className="card-body pt-0">
-										{/*The calendar */}
-										<div id="calendar" style={{ width: "100%" }} />
-									</div>
-									{/* /.card-body */}
-								</div>
-								{/* /.card */}
-							</section>
-							{/* right col */}
-						</div>
-						{/* /.row (main row) */}
-					</div>
-					{/* /.container-fluid */}
-				</section>
-			</div>
-		</>
-	);
+              {/* /.Left col */}
+              {/* right col (We are only adding the ID to make the widgets sortable)*/}
+              <section className="cal">
+                {/* Calendar */}
+                <div className="calendar">
+                  <Calendar />
+                </div>
+              </section>
+              {/* right col */}
+            </div>
+            {/* /.row (main row) */}
+          </div>
+          {/* /.container-fluid */}
+        </section>
+      </div>
+    </>
+  );
 };
 
+
+
 export default Dashboard;
+
