@@ -1,8 +1,15 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHref } from "react-router-dom";
 
 const Sidebar = () => {
 	const [pages, setPages] = useState(false);
+	const history = useHref();
+
+	function reloadPath(path) {
+		history.push(path);
+		window.location.reload();
+	}
+
 	function clickPages() {
 		setPages(!pages);
 	}
@@ -11,7 +18,7 @@ const Sidebar = () => {
 		<>
 			<aside className="main-sidebar sidebar-dark-primary elevation-4 ">
 				{/* Brand Logo */}
-				<NavLink to="/" className="brand-link ">
+				<NavLink to="/" className="brand-link " onClick={() => reloadPath("/")}>
 					<img
 						src="dist/img/AdminLTELogo.png"
 						alt="AdminLTE Logo"
@@ -32,7 +39,11 @@ const Sidebar = () => {
 							/>
 						</div>
 						<div className="info">
-							<NavLink to="/" className="d-block">
+							<NavLink
+								to="/"
+								className="d-block"
+								onClick={() => reloadPath("/")}
+							>
 								Administrator
 							</NavLink>
 						</div>
@@ -48,7 +59,11 @@ const Sidebar = () => {
 						>
 							{/* dashboard */}
 							<li className="nav-item">
-								<NavLink to="/" className="nav-link">
+								<NavLink
+									to="/"
+									className="nav-link"
+									onClick={() => reloadPath("/")}
+								>
 									<i className="far fa-circle nav-icon" />
 									<p>Web Profile</p>
 								</NavLink>
