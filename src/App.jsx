@@ -1,5 +1,3 @@
-import "./App.css";
-
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
@@ -9,6 +7,7 @@ import Add from "./pages/Add";
 import Edit from "./pages/Edit";
 import Product from "./pages/Product";
 import WebProfile from "./pages/WebProfile";
+import "./App.css";
 
 const App = () => {
 	return (
