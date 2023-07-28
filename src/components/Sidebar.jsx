@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-	const [pages, setPages] = useState(false);
-	function clickPages() {
+	const [pages, setPages] = useState(true);
+	const clickPages = () => {
 		setPages(!pages);
-	}
+	};
 
 	return (
 		<>
@@ -56,14 +56,10 @@ const Sidebar = () => {
 
 							<li
 								className={`nav-item ${
-									pages ? "menu-is-opening menu-open" : ""
+									pages ? "" : "menu-is-opening menu-open"
 								}`}
 							>
-								<a
-									onClick={clickPages}
-									to="#"
-									className={`nav-link ${pages ? "active" : ""}`}
-								>
+								<a onClick={clickPages} to="#" className="nav-link">
 									<i className="nav-icon fas fa-book" />
 									<p>
 										Pages
