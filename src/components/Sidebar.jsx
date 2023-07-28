@@ -71,14 +71,10 @@ const Sidebar = () => {
 
 							<li
 								className={`nav-item ${
-									pages ? "menu-is-opening menu-open" : ""
+									pages ? "" : "menu-is-opening menu-open"
 								}`}
 							>
-								<a
-									onClick={clickPages}
-									to="#"
-									className={`nav-link ${pages ? "active" : ""}`}
-								>
+								<a onClick={clickPages} to="#" className="nav-link">
 									<i className="nav-icon fas fa-book" />
 									<p>
 										Pages
